@@ -1,0 +1,14 @@
+services:
+  api:
+    image: lucaskbr/backend-rinha-2025
+    build: .
+    ports:
+      - 9999:80
+    networks:
+      - payment-processor
+
+networks:
+  backend:
+    driver: bridge
+  payment-processor:
+    external: true
